@@ -24,8 +24,10 @@ public class Footsteps : MonoBehaviour
             audio.PlayOneShot(footstepsOnWood[Random.Range(0, footstepsOnWood.Length)]);
     }
 
-    void OnCollisionEneter(Collision collison)
+    private void OnCollisionEneter(Collision collison)
     {
+        Debug.Log("Pilla colision");
+        Debug.Log(collison.gameObject.tag);
         switch (collison.gameObject.tag)
         {
             case "Grass":
