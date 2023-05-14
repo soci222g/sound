@@ -24,20 +24,21 @@ public class Footsteps : MonoBehaviour
             audio.PlayOneShot(footstepsOnWood[Random.Range(0, footstepsOnWood.Length)]);
     }
 
-    private void OnCollisionEneter3d(Collision collison)
+    
+    private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Pilla colision");
-        Debug.Log(collison.gameObject.tag);
-        switch (collison.gameObject.tag)
+        Debug.Log(collision.gameObject.tag);
+        switch (collision.gameObject.tag)
         {
             case "Grass":
-                material = collison.gameObject.tag;
+                material = collision.gameObject.tag;
                 break;
             case "Wood":
-                material = collison.gameObject.tag;
+                material = collision.gameObject.tag;
                 break;
             case "Concrete":
-                material = collison.gameObject.tag;
+                material = collision.gameObject.tag;
                 break;
             default:
                 break;
