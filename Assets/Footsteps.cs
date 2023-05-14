@@ -7,13 +7,14 @@ public class Footsteps : MonoBehaviour
     public AudioClip[] footstepsOnGras;
     public AudioClip[] footstepsOnWood;
     public AudioClip[] footstepsOnConcrete;
-    string material;
+    public string material;
 
+    
     public void PlayFootstepSound()
     {
         AudioSource audio = GetComponent <AudioSource>();
         audio.volume = Random.Range(.9f, 1f);
-        audio.pitch = Random.Range(.9f, 1f);
+        audio.pitch = Random.Range(.9f, 1.2f);
 
         if (material == "Grass")
             audio.PlayOneShot(footstepsOnGras[Random.Range(0, footstepsOnGras.Length)]);
@@ -35,6 +36,8 @@ public class Footsteps : MonoBehaviour
                 break;
             case "Concrete":
                 material = collison.gameObject.tag;
+                break;
+            default:
                 break;
         }
     }
