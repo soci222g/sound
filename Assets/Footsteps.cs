@@ -24,7 +24,7 @@ public class Footsteps : MonoBehaviour
             audio.PlayOneShot(footstepsOnWood[Random.Range(0, footstepsOnWood.Length)]);
     }
 
-    private void OnCollisionEneter(Collision collison)
+    private void OnCollisionEneter3d(Collision collison)
     {
         Debug.Log("Pilla colision");
         Debug.Log(collison.gameObject.tag);
